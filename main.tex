@@ -1,14 +1,14 @@
-\documentclass[executivepaper,10pt,twoside,openany,draft]{memoir}
+\documentclass[smallroyalvopaper,9pt]{memoir}
 \usepackage{multicol, multirow, array} % table and column pages formatting
 \usepackage{fontspec} % font selection
 \usepackage{anyfontsize} % font sizes
 \usepackage[hidelinks]{hyperref} % links to different sections of pdf
 \usepackage{url}        % url formatting
+\usepackage{amsmath}    % for the substack function in RBPN
 \usepackage{float}      % floats 
 \usepackage{graphicx}   % for pictures
 \usepackage{booktabs}   % nicer tab lines
 \usepackage{tabto}      % for tabbing
-\usepackage{textcomp}   % ?? I'm afraid to remove it
 \usepackage{qtree}      % for trees, particularly in phonology section
 \usepackage{expex}      % glossing package
 \usepackage{phonrule}   % phonotactics rules
@@ -17,6 +17,8 @@
 
 %-----CONFIGURATION------
 %------------------------
+
+\settrimmedsize{234mm}{156mm}{*}
 
 \setmainfont{STIX Two Text}
 \restylefloat{table}
@@ -139,13 +141,12 @@ THIS IS A WORK IN PROGRESS. Some sections may lack a lot of detail or be worded 
 \listabbrev{\textsc{antip}}{antipassive}
 \listabbrev{C}{consonant}
 \listabbrev{\textsc{der}}{derivational morpheme}
-\listabbrev{\textsc{ds}}{different subject}
 \listabbrev{\textsc{du}}{dual number}
 \listabbrev{\textsc{fact}}{factual aspect}
 \listabbrev{\textsc{hab}}{habitual aspect}
 \listabbrev{\textsc{ina}}{inanimate}
 \listabbrev{\textsc{inst}}{instrumental}
-\listabbrev{\textsc{nob}}{null-object marker}
+\listabbrev{\textsc{nact}}{non-actual aspect}
 \listabbrev{\textsc{o, obj}}{object}
 \listabbrev{\textsc{obv, '}}{obviative, e.g. 3'}
 \listabbrev{\textsc{p, pl}}{plural number}
@@ -153,7 +154,6 @@ THIS IS A WORK IN PROGRESS. Some sections may lack a lot of detail or be worded 
 \listabbrev{\textsc{prt}}{partitive}
 \listabbrev{\textsc{s, sg}}{singular number}
 \listabbrev{\textsc{sbj}}{subjunctive}
-\listabbrev{\textsc{sr}}{switch reference}
 \listabbrev{\textsc{V}}{vowel}
     
 \end{multicols*}
@@ -162,11 +162,17 @@ THIS IS A WORK IN PROGRESS. Some sections may lack a lot of detail or be worded 
 
 \mainmatter
 
+\chapter{The Piwken people}
+
+Piwkenaisetwem, the Piwken people of Manitoba, have many hundreds of years of history in the area. Nowadays, they're mostly found in the Piwken First Nation on the border of Lake Winnipeg. While there are about 1800 native Piwken living in and around the reservation, only about 300 of them still speak their native language, all above the age of 50, and almost none of them are monolingual speakers. It's estimated that if no action is taken to preserve the language, it may become extinct within the next 40 years. This grammar and its accompanying dictionary has been developed in cooperation with the Piwken Council as the basis for developing learning material and other media to revitalize the language. With more children being immersed from an early age and taught the importance of preserving their culture, the Piwkenaisetwem hope to see their language survive for many generations yet.
+
 \chapter{Phonology}
 
-The phonemic inventory, at 14 contrasting segments, is considerably smaller than the world-average 27. Below is a table of all the phonemic consonants, as well as more detailed descriptions of each phoneme and its phonetic realizations below.
+Unless one takes precautions, it is easy to naïvely approach new languages with a Western (Indo-European) mindset and presuppositions about their phonological frameworks. In order to fairly and accurately assess \langeng{}, we must try to eliminate as many biases as posible and build a new framework from the ground up.
 
-The French grammar had a very simple and inaccurate phonological analysis, where the voiced allophones of /p t k/ were considered a discrete set of phonemes.
+The phonemic inventory of \langeng{}, at 14 contrasting segments, is considerably smaller than the world-average 27. While there is decent overlap of /i u/ and /j w/ owing to their shared underlying composition, it still makes sense to analyze them as different phonemes because there are environments where they can only be analyzed as one set as opposed to the other, or the environment favors one over other even if both could theoretically apply.
+
+The French grammar had a very simple and inaccurate phonological analysis where the voiced allophones of /p t k/ were considered a discrete set of phonemes, /ɬ/ was referred to as /ʃ/, 
 
 \section{Consonants}
 
@@ -188,9 +194,29 @@ The French grammar had a very simple and inaccurate phonological analysis, where
 
 % ɡ unicameral g here
 
-\lang{} has 10 phonemic consonants.
+\lang{} distinguishes 10 consonant phonemes.
 
 % put here explanations for each phoneme along with initial, medial and final realizations along with any other special cases.
+
+\paragraph{/p/} is a bilabial plosive. It is realized as an unaspirated [p], or [b] if intervocalic. Word-final /p/ often becomes [ʔ].
+
+\paragraph{/t/} is an alveolar plosive. It is realized as an unaspirated apical [t], or [d] if intervocalic.
+
+\paragraph{/k/} is a velar plosive. It is realized as an unaspirated [k], or [g] if intervocalic. Word-final /k/ becomes [x]. Like many velars cross-linguistically, the articulation is quite weak, and can be affricated, fricated, or dropped in many cases. Intervocalic /k/ has a tendency to be elided all the way down to [ɣ] intervocalically.
+
+\paragraph{/s/} is an alveolar fricative. It is realized as an apical [s], or [z] if intervocalic. Word-initially, it becomes [t\bind{}s].
+
+\paragraph{/ɬ/} is a lateral alveolar fricative. It is realized as [ɬ] with the tip of the tongue between the front teeth and the articulation occuring further back on the tongue as a result, but still on the velar ridge. Before /i/ it becomes [θ], or [ç] if preceded by [k]. Word-initially, it becomes [t\bind{}ɬ].
+
+\paragraph{/h/} is a glottal fricative. It is for the most part realized as [h], but can become a strongly fricated [x] after plosives. Word-initially it becomes [ʔ].
+
+\paragraph{/m/} is a bilabial nasal, always realized as [m].
+
+\paragraph{/n/} is an alveolar nasal. It is realized as [n], but can assimilate with adjacent consonants to become [m] or [ŋ]. 
+
+\paragraph{/j/} is a palatal approximant. 
+
+\paragraph{/w/} is a labiovelar approximant.
 
 \subsection{Intervocalic voicing} \label{intervocalic}
 
@@ -204,7 +230,29 @@ The fricatives /s h ł/ undergo fortition to [t\bind{}s ʔ t\bind{}ɬ] word-init
 
 % examples here
 
+\subsection{Geminization}
+
+Sequences of the same consonant are geminated and produced as a single release.
+
 \section{Vowels}
+
+Vowels are defined by a set of phonological restrictions that do not apply to consonants; likewise, consonants can in turn be defined by their non-vowelness.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        Rule & Excludes \\
+        \midrule
+        Vowels must be continuants & /p t k/ \\
+        Vowels are always voiced & /s h ɬ/ \\
+        Vowels are oral & /m n/ \\
+        Vowels can't break long vowel sequences & /j w/ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+The above rules leave us with only the sequences that behave in a way that we can traditionally categorize as vowels.
 
 \begin{table}[ht]
     \centering
@@ -222,7 +270,7 @@ The fricatives /s h ł/ undergo fortition to [t\bind{}s ʔ t\bind{}ɬ] word-init
 
 \lang{} contrasts only four vowel qualities. 
 
-\paragraph{/a/} is a low central vowel, almost always pronounced like the cardinal vowel [a].
+\paragraph{/a/} is a low central vowel, almost always pronounced like the cardinal vowel [a]. 
 
 \paragraph{/e/} is a mid front vowel, usually pronounced like [e], but may be lowered to [ɛ]. Before /w/, it is realized as a schwa [ə].
 
@@ -230,50 +278,55 @@ The fricatives /s h ł/ undergo fortition to [t\bind{}s ʔ t\bind{}ɬ] word-init
 
 \paragraph{/u/} is a high back rounded vowel, usually pronounced like a near-back vowel [ʊ]. It can sometimes appear as low as [o].
 
-\section{Syllables and moras}
+\subsection{Diphthongs and long vowels}
 
-When it comes to the segmental phonology of \lang{}, moras are a far more useful metric than syllables. 
+Up to two vowels may occur in sequence, and are realized as one consistent glide from one vowel quality to the other. No vowel is given more weight as the "main vowel". This same process creates long vowels when two identical vowels occur in sequence.
 
-Syllables consist of one or two moras, where the nucleus and onset count as one, and the coda counts as one. From there we can define any syllable containing one mora as a \textbf{light syllable}, and any syllable containing two moras as a \textbf{heavy syllable}. Words can contain as many light syllables as possible, but can't ever have more than two consecutive heavy syllables.
+\section{Phonotactics}
 
-\begin{figure}[ht]
-    \Tree [.σ [.μ C V ] [.μ C/V ] ]
-    \caption{Basic moraic description of \lang{} syllables}
-\end{figure}
+We can't conclusively demonstrate the existence of a syllable structure in \langeng{}, however the phonotactic rules often produce results that resemble syllables. Moras seem to be a more apt concept to describe these rules, and speakers seem to intuitively divide words into moras. The established phonotactic rules are outlined below:
 
-The coda position may contain any consonant or a duplicate of the nucleus vowel.
+\begin{enumerate}
+    \itemsep0em 
+    \item a mora can comprise a vowel or consonant-vowel sequence.
+    \item a mora can also comprise just a consonant if it divides a vowel and a non-vowel (i.e. consonant or word boundary).
+    \item an otherwise unbound consonant preceding a vowel must combine to form one mora.
+    \item only runs of up to 2 vowels or consonants is allowed; any third V or C in a row must be separated with an epenthetic segment.
+    \item words *must* comprise at least a two-segment sequence that is either one or two moras.
+\end{enumerate}
 
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{>{\bfseries}lll}
-        \toprule
-        V & light syllable & \\
-        CV & light syllable & \\
-        VC & heavy syllable & \\
-        VV & heavy syllable & \\
-        CVV & heavy syllable & \\
-        CVC & heavy syllable & \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+% legal sequences so far (these can overlap):
+% \begin{itemize}
+%     \itemsep0em 
+%     \item V - i, u, a, e
+%     \item CV - ki, tu, pa, ne etc.
+%     \item VC - et, um, ap etc.
+%     \item VV - ai, e: etc.
+%     \item CVC - nah, mit, kup etc.
+%     \item CVV - na:, nai, nae, nau etc.
+%     \item VCV - ata, iku etc.
+%     \item VCCV - ahki, edma etc.    
+% \end{itemize}
 
-\subsection{Restrictions}
+% illegal sequences (\% word boundary):
+% \begin{itemize}
+%     \itemsep0em 
+%     \item \%C\%
+%     \item \%CCV
+%     \item VCC\%
+%     \item CCC
+%     \item VVV    
+% \end{itemize}
 
-/ju/ and /iw/ are in complementary distribution, same as /uj/ and /wi/
+The 1st/2nd person suffix -s can appear word-finally after one consonant, violating phonotactics.
+
+There doesn't seem to be any restrictions in terms of which consonants can appear where.
+
+/ju/ and /iw/ are in complementary distribution, same as /uj/ and /wi/.
+
+/wa/ has a tendency to be realized as [o] in fast speech.
 
 /Vji/ is rare and very frequently turns into /Vj/; /\%ijV/ into /\%jV/ has already happened recently.
-
-\subsection{Semivowel codas and vowel length}
-
-The coda position of the syllable can either be filled by a consonant or a vowel of the same quality as the nucleus to form a long vowel.
-
-The approximants /j/ and /w/ can be interpreted as high vowels not occupying the nucleus position of the syllable, thereby forming a pseudo-minimal pair with /i/ and /u/ with the feature [±syl] distinguishing them. Underlyingly, both the vowels and approximants are |i| and |u|. According to this model, every |i| and |u| wants to become the nucleus of its own syllable, but are in most cases forced out of that position by a more salient vowel, or they must merge with an adjacent vowel; if they meet neither of these criteria, the moras are allowed to become syllabic and act like vowels. The reasoning behind this analysis is that any syllable with a high vowel and its equivalent approximant will merge to form one long vowel without a perceivable change in articulation between them. At the same time, the approximants may surface as vowels when not next to an existing vowel, for example where a morphological operation places either approximant next to a consonant without an adjoining vowel. Below is a list of examples involving /j/, demonstrated as going from the underlying moraic composition, then phonemic segmentation, then phonetic realization:
-
-% put examples of /j/ here
-
-\noindent The same happens with /w/:
-
-% put examples of /w/ here
 
 \newpage
 
@@ -297,8 +350,6 @@ The approximants /j/ and /w/ can be interpreted as high vowels not occupying the
     \caption{\lang{} orthography, devised by \$\$\$}
 \end{table}
 
-The phonemes /p t k s/ are represented by \sqbrack{b d g z} when they are voiced. /j/ and /w/ are represented by \sqbrack{i} and \sqbrack{u} respectively when following vowels or interconsonantally, but not intervocally.
-
 There have been efforts to adopt Cree syllabics, but this has so far not seen widespread support.
 
 \chapter{Verbs} 
@@ -313,70 +364,139 @@ The verbal morphology can be laid out as such:
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{>{\bfseries}lll}
+    \begin{tabular}{>{\bfseries}ll}
         \toprule
-        Slot & Sub-slot & Use \\
+        Slot & Use \\
         \midrule
-        -1 & & preverbal affixes \\
-        0 & 0a & verb root \\
-          & 0b & additional verb \\
-          & 0c & derivational suffixes \\
-        1 & 1a & -y suffix \\
-          & 1b & detransitive suffixes \\
-        2 & & final suffix \\
+        -1 & preverbal affix \\
+        0 & root \\
+        1 & reduplication \\
+        2 & additional verb \\
+        3 & derivational suffixes \\
+        4 & -y suffix \\
+        5 & final suffix \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-The following sections will go through each group of affixes in the order they appear in this list.
+\section{Verb classes}
+
+Verbs are divided into four categories depending on factors like the number and types of arguments, the lexical content, and morphology. These factors come from the verb stem.
+
+\subsection{\textsc{move} class}
+
+Verbs in the \textsc{move} class describe some kind of physical movement from one place or orientation to another, either of its own power or by means of an external volitive or natural force. 
+
+\subsection{\textsc{change} class}
+
+Verbs in the \textsc{change} class describe some kind of physical alteration of an entity. This involves compositional, deformational, or aesthetic changes, which can be either momentary or lasting. Prototypical \textsc{change}-type verbs involve either one entity retaining its physical composition but is deformed into another shape (e.g. breaking or bending a stick) or one entity transforming into something else as a whole (e.g. water freezing into ice).
+
+\subsection{\textsc{feel} class}
+
+Verbs in the \textsc{feel} class describe actions or events with no clear physical force imparted on someone or something. This includes sensory impressions, feelings, thoughts, talking, crying, and so on.
+
+\subsection{\textsc{remain}-type}
+
+Verbs in the \textsc{remain} class are stative verbs describing states, qualities, characteristics.
 
 \section{Preverbal affixes}
 
+A group of prefixes come before the verb stem to mark various modal and aspectual things. There are two sets, and the set used for a given verb depends on factors like verb class and 
+
 \begin{table}[ht]
     \centering
-    \begin{tabular}{>{\bfseries}ll}
+    \begin{tabular}{lcc}
         \toprule
-        ? & factual preverb \\
-        ? & actual preverb \\
-        ? & nonactual preverb \\
-        ? & punctual preverb \\
-        ? & defective preverb \\
-        ? & jussive preverb \\
-        ? & resumptive preverb \\
+                   & Set 1  & Set 2 \\
+        \midrule
+        Factual    & i-     & ki- \\
+        Nonactual  & lea-   & kia- \\
+        Actual     & a-     & ka- \\
+        Punctual   & ?-     & ?- \\
+        Negative   & ?-     & ?- \\
+        Defective  & ?      & ?- \\
+        Jussive    & ?-     & ?- \\
+        Resumptive & ?-     & ?- \\
         \bottomrule
     \end{tabular}
-    \caption{Preverbs in \lang}
+    \caption{Preverbs of \lang}
 \end{table}
 
-\subsection{Factual preverb}
+Each verb class uses a particular set of preverbs:
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{>{\sc}lcc}
+        \toprule
+        & Set 1 & Set 2 \\
+        \midrule
+        move & cislocative motion & translocative motion \\
+        change & X & - \\
+        feel & - & X \\
+        remain & X* & -\\
+        \bottomrule
+    \end{tabular}
+    \caption{Preverb sets used with each verb class}
+\end{table}
+
+The \textsc{move} verb class uses either set depending on the motion described. Any movement that starts and finishes in the vicinity of the relevant area is called cislocative motion and takes set 1. Any movement that starts nearby and finishes somewhere that's far away or not relevant, or both starts and finishes in an area far away or unseen by the discourse participants is called translocative motion and takes set 2.
+
+The \textsc{change} verb class uses set 1.
+
+The \textsc{feel} verb class uses set 2.
+
+The \textsc{remain} verb class can only use the Factual, Nonactual, Negative, and Jussive preverbs from set 1.
+
+\subsection{Factual preverbs}
 
 "indicative" for stative stems (nouns, adjectives)
 
 habitual for active stems (durative, punctual)
 
-\subsection{Actual preverb}
+\subsection{Nonactual preverbs}
+
+irrealis/subjunctive-ish, verbal noun-ish
+
+The Nonactual preverbs are used to mark that an action or event being talked about as non-finite; it is not currently happening, and the discourse is rather about the concept of the action itself. This differs from the Negative preverbs, which assert the untruth of a statement. It can in many ways be likened to English infinitives and gerunds, but also subjunctive verbs (i.e. 'I \textit{would} [...]'). 
+
+\subsection{Actual preverbs}
 
 "indicative" for durative stems
 
-punctual-turned-frequentative takes Actual preverb
+frequentative takes Actual preverb
 
-\subsection{Nonactual preverb}
+The actual preverbs mark an action or event happening at an indicated time. They are closer to a realis mood marker as it does not encode any tense or aspect. They contrast most directly with the Nonactual preverbs.
 
-irrealis/subjunctive-ish, verbal noun-ish, must be used when verb is negated
+\pex
+\a\begingl
+ka-[\textsc{act.ii}-]@
+hahu[sleep]
+\glft `they are sleeping'
+\endgl
+\a\begingl
+kia-[\textsc{nact.ii}-]@
+hahu[sleep]
+\glft `sleeping', `they would sleep'
+\endgl
+\xe
 
-\subsection{Punctual preverb}
+\subsection{Negative preverbs}
+
+negation!
+
+\subsection{Punctual preverbs}
 
 "indicative" for punctual stems
 
-\subsection{Defective preverb}
+\subsection{Defective preverbs}
 
 action halted before culmination, either unstarted (atelic) or unfinished (telic)
 
-\subsection{Jussive preverb}
+\subsection{Jussive preverbs}
 
 should, ought to, have to, must
 
-\subsection{Resumptive preverb}
+\subsection{Resumptive preverbs}
 
 once more, resumes, repeats (once), NOT frequentative
 
@@ -419,11 +539,11 @@ Rightward reduplication involves copying some part of the root onto the end of t
         CV    & CVC(V)  & -pap `become large, grow' (< -pa `be large') \\
               &         & -wanin `deepen, sink' (< -wani `be deep') \\
               &         & -hahuhu `fall asleep' (< -hahu `sleep') \\
-        (C)VC & CVCVC   & -kutut `about to notice' (< -kut `notice') \\
-              &         & -hepasas `start to bend, buckle' (< -hepas `bend') \\
-              &         & -newew `where to' (< -new `what') \\
+        (C)VC & CVCV    & -kutu `about to notice' (< -kut `notice') \\
+              &         & -hepasa `yield, buckle' (< -hepas `bend') \\
+              &         & -newe `where to' (< -new `what') \\
         CV\longv{} & CV\longv{}CV & -tiidi `sit down' (< -tii `sit, be sitting') \\
-              &         & -taata `split up, split in two' (< -taa `two, a pair') \\
+              &         & -taata `split in two' (< -taa `two, a pair') \\
               &         & -thameeme `go around' (< -thamee `return') \\
         (C)VCCV & (C)VCCVCV & -patwewe `set off' (< -patwe `go') \\
               &         & -untutu `demonstrate' (< -untu `lead') \\
@@ -434,7 +554,7 @@ Rightward reduplication involves copying some part of the root onto the end of t
 
 All the different patterns have in common that they only add one mora to the stem. The simplest process is for light monosyllables, where they take a duplicate of the onset consonant as a coda, or duplicate the entire last syllable if that onset is /h/. On closed syllables, the nucleus and coda are duplicate to form another syllable with the same coda. On long vowel syllables, the first mora of the syllable is duplicated. On multisyllabic roots ending in a light syllable preceded by a heavy syllable, the entire last syllable is reduplicated.
 
-All stems formed by rightward reduplication fall into the category of inchoative stems, as they all describe some form of transition into a new state or action. On stative stems it marks meanings akin to `become X' or `turn into X', on durative stems it marks a meaning akin to `start to X', while on stems describing punctual events it suggests imminent action akin to `about to X'. The resulting inchoative stems usually end up punctual in nature, taking the punctual affix \textit{ki-}. Many inchoative stems are no longer productive and have taken on meanings that aren't interchangeable with their equivalent underived stems; a couple examples can be seen in the above table.
+All stems formed by rightward reduplication fall into the category of inchoative stems, as they all describe some form of transition into a new state or action. On stative stems it marks meanings akin to `become X' or `turn into X', on durative stems it marks a meaning akin to `start to X', while on stems describing punctual events it suggests imminent action akin to `about to X'. The resulting inchoative stems usually end up punctual in nature, taking the punctual preverb. Many inchoative stems are no longer productive and have taken on meanings that aren't interchangeable with their equivalent underived stems; a couple examples can be seen in the above table.
 
 The exact lexical changes can vary. Some stems simply describe the initiaton of an activity: -kiiki `start to write' (< -kii `write'), -nuipapa `start to perform' (< -nuipa `perform a song/dance'), -tawawa `start to eat' (< -tawa `eat'), -apasas `set off on foot' (< -apas `travel far on foot, trek'). Other stems indicate imminent action: -kutut `about to notice' (< -kut `notice'), -matat `about to shriek' (< -mat `shriek'), -sayai `about to play with' (< -sai `play with'). These stems usually come from punctual actions, but some durative actions can take on a sense closer to this than the simple inchoative.
 
@@ -458,9 +578,55 @@ This can also be used for affection or adoration towards someone or something.
 
 % example here
 
+\subsection{Additional verb}
+
+You can add another verb to the stem. the extra verb is usually about posture or movement. Oftentimes has an imperfective connotation but can also be read literally.
+
+\subsection{Derivational affixes}
+
+These affixes 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ll}
+        \toprule
+        -hi & 'entirely' or 'all of' \\
+        -at & 'back and forth', 'there and back' \\
+        -nen & 'one after another', 'one another' \\
+        -ke & 'come and X' \\
+        -yeets & 'make use of X' \\
+        \bottomrule
+    \end{tabular}
+    \caption{List of verbal derivational affixes}
+\end{table}
+
+\subsubsection{-hi 'entirely', 'all of'}
+
+\subsubsection{-at 'back and forth'}
+
+\subsubsection{-nen 'one after another'}
+
+\subsubsection{-ke 'come and X'}
+
+\subsubsection{-yeets 'make use of X'}
+
 \section{Final suffix}
 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lcccc}
+        \toprule
+         & \multicolumn{4}{c}{Following...} \\
+         & C & CC & V & VV \\
+        \midrule
+        1st and 2nd person & -s & -ih & -s & -s \\
+        3rd person animate & -Ce & -e & -e & -ne \\
+        3rd person inanimate & -Ca & -a & -e & -ne \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
+The third person affixes following C replicate the consonant they follow to make them longer.
 
 Intransitive verbs take no person marking. Transitive verbs are marked for person agreeing with the syntactic pivot. The first person is used for the speaker or a group including the speaker. The second person is used for the addressee (whoever is being spoken to) in much the same way. The third person refers to anything not a speech act participant, including impersonal or circumstantial events, e.g. `it's raining'.
 
@@ -470,47 +636,59 @@ While pure nouns exist, it is very common for nominals to be derived from verbs.
 
 \section{Case}
 
-\subsection{Absolutive}
+\subsection{Absolutive case}
 
 least agentive argument takes absolutive, always. 
 
 intransitive verbs take absolutive because the sole argument is the least agentive argument.
 
-\subsection{Ergative 1}
+\subsection{Ergative 1 case}
 
 marks the agent of transitive verbs where the action/change described can only come about as a result of someone's action. e.g. something can't be chewed by any other means than someone doing it, making the agent inherent to the action, and so the agent of the verb 'chew' takes the ergative 1 case. 
 
-\subsection{Ergative 2}
+\subsection{Ergative 2 case}
+
+% can also maybe be called Causative?
 
 marks the agent of transitive verbs where the action/change described can happen through various means, not just through deliberate action. e.g. something can fall apart on its own, or by inanimate forces of nature, but a volitive agent can come around and take it apart deliberately. Similarly, something can heat up on its own, or through external forces both volitive and non-volitive. As such, "take apart" and "warm up(caus.)" would take an ergative 2 agent
 
+\subsection{Dative case}
+
+used for experiencers of \textsc{feel} verb class. Also benefactive and purposive (in order to [verb], for [verb])
+
 \section{Number}
 
--um?
+after CC or V, -um; after C VV -wem
 
 \section{Pronouns}
 
-There are personal pronouns and demonstrative pronouns. demonstrative pronouns also encode some pragmatic effect, figure out what.
+There are personal pronouns but no demonstrative pronouns.
+
+\subsection{Personal pronouns}
+
+\langeng{} does not have third person pronouns, nor does it have any demonstrative pronouns. 
 
 \begin{table}[ht]
     \centering
     \begin{tabular}{lllll}
         \toprule
-                             & Absolutive   & Ergative 1 & Ergative 2 & ? \\
+                             & Absolutive & Ergative 1 & Ergative 2 & Dative \\
         \midrule
-        1st person sg.       & awa          &       &   & \\
-        1st person pl.       &          &     &   & \\
-        1-2. person incl.    & awattaa    &  &   & \\
-        2nd person sg.       & igaw         &     &   & \\
-        2nd person pl.       &        &   &   & \\
-        3rd person ani. sg.  & he           &        &   & \\
-        3rd person ani. pl.  &           &     &   & \\
-        % 3rd person inan. sg. & simaa        &      &   & \\
-        % 3rd person inan. pl. &       &   &   & \\
+        1st person sg.       & ta         & tap      &   & tauk \\
+        1st person pl.       & taum       & tapwem   &   & taukwem \\
+        1-2. person incl.    & awattaa    & awattaap &   & awattaawuk \\
+        2nd person sg.       & igaw       & igaup    &   & igawuk \\
+        2nd person pl.       & igawwem    & igaupwem &   & igawukwem \\
         \bottomrule
     \end{tabular}
     \caption{Personal pronouns of \lang}
 \end{table}
+
+\section{Demonstrative determiner}
+
+one formative, put before NP to mean "this" or after to mean "that"
+
+In order to work pronominally, must modify [word for "particular one", figure out]
 
 \chapter{Syntax}
 
@@ -525,15 +703,15 @@ Transitive verbs: two arguments, least agentive argument P (patient) is the mark
 
 Ditransitive verbs: three arguments, least agentive argument T (theme) is the marked argument. -y on the verb switches this and makes more agentive argument R (recipient) the marked argument
 
-Tritransitive verbs: lol lmao
+Only the marked argument can do certain things?
 
 \section{Simple clauses}
 
-Most clauses are verb-final. 
+Verbs are always put last in the sentence as a rule. 
 
 \subsection{Intransitive}
 
-SV
+subject-verb or null-verb (impersonal)
 
 \subsection{Transitive}
 
@@ -541,11 +719,7 @@ verb last, marked argument first
 
 \subsection{Ditransitive}
 
-agent-recipient-theme-verb
-
-\subsection{Causative}
-
-causer-verb-causee-object 
+theme-recipient-agent-verb for \textsc{give} verbs, others depend
 
 \section{Parataxis}
 
