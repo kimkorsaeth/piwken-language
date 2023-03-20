@@ -1,26 +1,28 @@
 \documentclass[smallroyalvopaper,9pt]{memoir}
 \usepackage{multicol, multirow, array} % table and column pages formatting
 \usepackage{fontspec} % font selection
+\usepackage{xeCJK}
 \usepackage{anyfontsize} % font sizes
 \usepackage[hidelinks]{hyperref} % links to different sections of pdf
 \usepackage{url}        % url formatting
-\usepackage{amsmath}    % for the substack function in RBPN
 \usepackage{float}      % floats 
 \usepackage{graphicx}   % for pictures
 \usepackage{booktabs}   % nicer tab lines
 \usepackage{tabto}      % for tabbing
 \usepackage{qtree}      % for trees, particularly in phonology section
 \usepackage{expex}      % glossing package
-\usepackage{phonrule}   % phonotactics rules
+% \usepackage{phonrule}   % phonotactics rules
 \usepackage{enumitem}   % lists (enumerate)
 \usepackage[calc,english]{datetime2} % auto updates date
+
 
 %-----CONFIGURATION------
 %------------------------
 
 \settrimmedsize{234mm}{156mm}{*}
 
-\setmainfont{STIX Two Text}
+\setmainfont{Noto Serif}
+\setCJKmainfont{Noto Sans CJK JP}
 \restylefloat{table}
 
 \setsecnumdepth{subsubsection}
@@ -59,11 +61,12 @@
 %------------------------
 
 \newcommand{\lang}{Piwkeneth}
-\newcommand{\langfr}{Nabasais}
+\newcommand{\langfr}{Pévouguienne}
 \newcommand{\langeng}{Piwken}
 \newcommand{\people}{TBD}
 
-\newcommand{\longv}{ː}
+\newcommand{\longv}[1]{#1ː}
+\newcommand{\abreve}[1]{#1\symbol{"32F}}
 \newcommand{\sqbrack}[1]{$\langle$#1$\rangle$}
 \newcommand{\ttilde}{\raise.17ex\hbox{$\scriptstyle\sim$}}
 \newcommand{\bind}{\symbol{"0361}}
@@ -110,9 +113,17 @@
 
 \chapter*{Preface}
 
-\lang{} is a constructed language, and the speakers are entirely fictional. This grammar is a work of fiction.
-
 THIS IS A WORK IN PROGRESS. Some sections may lack a lot of detail or be worded very poorly. I'm not good at translating my thoughts and ideas into words, and while I'm constantly refining and expanding the whole grammar, it'll be at my own (considerably slower) pace. I ask that you reserve some judgement until I can call this done, and hope that you can enjoy and get excited by what is here so far.
+
+\langeng{} is a constructed language, and the surrounding culture that I describe throughout this document is entirely fictional. I'm creating this language with autistic neurotypes in mind, not for the purpose of designing a more suitable form of communication for autistics, but to design certain elements in a way that corresponds to how autistic minds tend to operate in contrast to nonautistic ones. For me, this has several purposes: 
+
+\begin{enumerate}
+    \item Give myself a challenge by assuming no established or conventional explanation for how the language works, forcing me to document things to a greater extent than I've usually had to
+    \item Highlight the profound differences between autistic and non-autistic lives, world views, and communication to bring more awareness
+    \item Celebrate these differences that make me and other autistics who we are
+\end{enumerate}
+
+I hope that I'm able to achieve all three of these. 
 
 \newpage
 \tableofcontents
@@ -164,15 +175,15 @@ THIS IS A WORK IN PROGRESS. Some sections may lack a lot of detail or be worded 
 
 \chapter{The Piwken people}
 
-Piwkenaisetwem, the Piwken people of Manitoba, have many hundreds of years of history in the area. Nowadays, they're mostly found in the Piwken First Nation on the border of Lake Winnipeg. While there are about 1800 native Piwken living in and around the reservation, only about 300 of them still speak their native language, all above the age of 50, and almost none of them are monolingual speakers. It's estimated that if no action is taken to preserve the language, it may become extinct within the next 40 years. This grammar and its accompanying dictionary has been developed in cooperation with the Piwken Council as the basis for developing learning material and other media to revitalize the language. With more children being immersed from an early age and taught the importance of preserving their culture, the Piwkenaisetwem hope to see their language survive for many generations yet.
+Piwkenaisetwem, the Piwken people of central Canada, have many hundreds of years of history in the area. Nowadays, they're mostly found in the Piwken First Nation on the border of Lake Winnipeg. While there are about 1800 native Piwken living in and around the reservation, only about 300 of them still speak their native language, all above the age of 50, and almost none of them are monolingual speakers. It's estimated that if no action is taken to preserve the language, it may become extinct within the next 40 years. This grammar and its accompanying dictionary has been developed in cooperation with the Piwken Council as the basis for developing learning material and other media to revitalize the language. With more children being immersed from an early age and taught the importance of preserving their culture, the Piwkenaisetwem hope to see their language survive for many generations yet.
+
+\chapter{Prior research}
+
+In large parts, this grammar seeks to replace the 1641 grammar titled "Grammaire de Péouguienne", written by the French missionary [obnoxiously french name] who in large parts failed to describe the language with any accuracy or due care. The work serves no useful purpose as an established framework, and will only be mentioned here for posterity.
 
 \chapter{Phonology}
 
-Unless one takes precautions, it is easy to naïvely approach new languages with a Western (Indo-European) mindset and presuppositions about their phonological frameworks. In order to fairly and accurately assess \langeng{}, we must try to eliminate as many biases as posible and build a new framework from the ground up.
-
-The phonemic inventory of \langeng{}, at 14 contrasting segments, is considerably smaller than the world-average 27. While there is decent overlap of /i u/ and /j w/ owing to their shared underlying composition, it still makes sense to analyze them as different phonemes because there are environments where they can only be analyzed as one set as opposed to the other, or the environment favors one over other even if both could theoretically apply.
-
-The French grammar had a very simple and inaccurate phonological analysis where the voiced allophones of /p t k/ were considered a discrete set of phonemes, /ɬ/ was referred to as /ʃ/, 
+% Unless one takes precautions, it is easy to naïvely approach new languages with a Western (Indo-European) mindset and presuppositions about their phonological frameworks. In order to fairly and accurately assess \langeng{}, we must try to eliminate as many biases as posible and build a new framework from the ground up.
 
 \section{Consonants}
 
@@ -208,15 +219,15 @@ The French grammar had a very simple and inaccurate phonological analysis where 
 
 \paragraph{/ɬ/} is a lateral alveolar fricative. It is realized as [ɬ] with the tip of the tongue between the front teeth and the articulation occuring further back on the tongue as a result, but still on the velar ridge. Before /i/ it becomes [θ], or [ç] if preceded by [k]. Word-initially, it becomes [t\bind{}ɬ].
 
-\paragraph{/h/} is a glottal fricative. It is for the most part realized as [h], but can become a strongly fricated [x] after plosives. Word-initially it becomes [ʔ].
+\paragraph{/h/} is a glottal fricative. It is for the most part realized as [h], but becomes [ʔ] word-initially.
 
 \paragraph{/m/} is a bilabial nasal, always realized as [m].
 
 \paragraph{/n/} is an alveolar nasal. It is realized as [n], but can assimilate with adjacent consonants to become [m] or [ŋ]. 
 
-\paragraph{/j/} is a palatal approximant. 
+\paragraph{/j/} is described as a palatal approximant, but is considerably fricated. The resulting pronunciation is percieved as "tense"-sounding to Anglophone ears, perhaps more accurately transcribed as [ʝ\symbol{"31E}].
 
-\paragraph{/w/} is a labiovelar approximant.
+\paragraph{/w/} is described as a labiovelar approximant, but is slightly fricated compared to a prototypical [w]. A more accurate transcription might be [β\bind{}w].
 
 \subsection{Intervocalic voicing} \label{intervocalic}
 
@@ -234,25 +245,10 @@ The fricatives /s h ł/ undergo fortition to [t\bind{}s ʔ t\bind{}ɬ] word-init
 
 Sequences of the same consonant are geminated and produced as a single release.
 
+\newpage
 \section{Vowels}
 
-Vowels are defined by a set of phonological restrictions that do not apply to consonants; likewise, consonants can in turn be defined by their non-vowelness.
-
-\begin{table}[ht]
-    \centering
-    \begin{tabular}{lll}
-        \toprule
-        Rule & Excludes \\
-        \midrule
-        Vowels must be continuants & /p t k/ \\
-        Vowels are always voiced & /s h ɬ/ \\
-        Vowels are oral & /m n/ \\
-        Vowels can't break long vowel sequences & /j w/ \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-The above rules leave us with only the sequences that behave in a way that we can traditionally categorize as vowels.
+There are four short vowels, five if counting the epenthetic schwa.
 
 \begin{table}[ht]
     \centering
@@ -260,73 +256,130 @@ The above rules leave us with only the sequences that behave in a way that we ca
         \toprule
         & Front & Central & Back \\
         \midrule
-        High & i & & u \\
-        Mid & e & &  \\
-        Low & & a & \\
+        Close & i & & u \\
+        Mid & e & (ə) & \\
+        Open & & a & \\
         \bottomrule
     \end{tabular}
-    \caption{Phonemic vowel inventory of \lang}
+    \caption{Short vowel qualities}
 \end{table}
 
-\lang{} contrasts only four vowel qualities. 
+these short vowels, following a consonant, form dipthong with the epenthetic vowel:
 
-\paragraph{/a/} is a low central vowel, almost always pronounced like the cardinal vowel [a]. 
 
-\paragraph{/e/} is a mid front vowel, usually pronounced like [e], but may be lowered to [ɛ]. Before /w/, it is realized as a schwa [ə].
+\begin{itemize}
+    \centering
+    \item Ci > Cəi
+    \item Cu > Cɵu
+    \item Ce > Cɪe
+    \item Ca > Cəa
+\end{itemize}
 
-\paragraph{/i/} is a high front vowel, pronounced like the cardinal vowel [i].
+There are four long vowels:
 
-\paragraph{/u/} is a high back rounded vowel, usually pronounced like a near-back vowel [ʊ]. It can sometimes appear as low as [o].
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        & Front & Central & Back \\
+        \midrule
+        Close & \longv{i} [i\abreve{ɪ}] & & \longv{u} [u\abreve{ʊ}] \\
+        Mid & \longv{e} [e\abreve{ɛ}] & & \\
+        Open & & \longv{a} [a\abreve{æ}] & \\
+        \bottomrule
+    \end{tabular}
+    \caption{Long vowel qualities}
+\end{table}
 
-\subsection{Diphthongs and long vowels}
+Phonetically, they are realized as contours that glide towards the front-open corner /i\abreve{ɪ} u\abreve{ʊ} e\abreve{ɛ} a\abreve{æ}/.
 
-Up to two vowels may occur in sequence, and are realized as one consistent glide from one vowel quality to the other. No vowel is given more weight as the "main vowel". This same process creates long vowels when two identical vowels occur in sequence.
+These vowels, following consonants, do not trigger the insertion of epenthetic vowels.
+
+\section{Tone}
+
+There is tone, high and low where low is unmarked
+each phonemic element carries tone, even consonants
+each "syllable" in concrete level has resulting level or contour tone
+tonogenesis? where did they come from and what sorts of patterns has it created
+
+While on the surface \lang{} appears to exhibit a very complex tonal system, it's actually a fairly simple two-tone system that undergoes complex mutations during production. I do not care how applicable OT is to tonal systems, I am not acknowledging it by including it here.
+
+All segmental phonemic elements (consonants and vowels) carry either a high or low tone in the abstract phonotactic level. In the concrete level, tone must be carried by a syllabic component, meaning that obstruents - plosives and (voiceless) fricatives - must displace their tones onto an epenthetic vowel or an adjacent long vowel.
+
+Voiceless, word-final segments' behavior depends on their tone and preceding segment. A voiceless word-final segment that can't displace its tone onto a preceding long vowel will instead be unrealized, unless the tone is high, in which case an epenthetic vowel must follow it in the final pronunciation.
+
+Both short and long vowels carry tone, but long vowels can also "adopt" the tone of an adjacent obstruent.
+
+Almost all word-initial, voiceless plosives are associated with high tone. 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        \multicolumn{4}{c}{All vowels}\\
+        \midrule
+        Tone name & Notation & Abstract & Concrete \\
+        \midrule
+        Low & a, aa & C˩, (C˩)V˩, (C˩)\longv{V}˩ & V˩ \\
+        High & \=a, \=aa & C˥, (C˥)V˥, (C˥)\longv{V}˥ & V˥\\
+        Rising & \'a, \'aa & C˩V˥, C˩V:˥(C˥) & V˩˥ \\
+        Falling & \`a, \`aa & C˥V˩, C˥V:˩(C˩) & V˥˩ \\
+        \midrule
+        Tone name & Notation & Abstract & Concrete \\
+        \midrule
+        Low-rising & a\'a & (C˩)\longv{V}˩C˥ & \longv{V}˩˧ \\
+        High-falling & a\`a & (C˥)\longv{V}˥C˩ & \longv{V}˥˧\\
+        Low-bump & \'a\`a & C˩\longv{V}˥C˩ & \longv{V}˩˧˨ \\
+        High-dip & \`a\'a & C˥\longv{V}˩C˥ & \longv{V}˥˧˦ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tone marking diacritics}
+\end{table}
+
+% /mé:ńihḱa/ [meɛ̆́ńə́ihkɪ́a] - sheep
+% \begin{table}[ht]
+%     \centering
+%     \begin{tabular}{p{4cm}p{4cm}l}
+%         \toprule
+%         no marking & easy and clean but ambiguous without reference & meenihka\\
+%         \midrule
+%         mark high tones directly & weird on tall characters, iffy compatibility & mééńihḱia\\
+%         \midrule
+%         mark interactions on vowels & more in line with pronunciation, but diacritic hell & měénîhkâ\\
+%         \midrule
+%         direct superscript marking & visually messy & meeˊnˊihkˊa \\
+%         \midrule
+%         interactions superscript & visually messier & meeˇniˆhkaˆ \\
+%         \midrule
+%         direct but tone letter & cursed cursed cursed cursed cursed cursed cursed cursed & meeзnзihkзa \\
+%         \midrule
+%         interactions but tone letter & illegal & meeƽniчhkaч \\
+%         \midrule
+%         7a7a-FaM style & lite7 JaBauru & mEENihKa \\
+%         \midrule
+%         Hanzi & this is 很好 & 棉意和恰 \\
+%         \bottomrule
+%     \end{tabular}
+%     \caption{Options for how to mark tone in orthography}
+% \end{table}
 
 \section{Phonotactics}
 
-We can't conclusively demonstrate the existence of a syllable structure in \langeng{}, however the phonotactic rules often produce results that resemble syllables. Moras seem to be a more apt concept to describe these rules, and speakers seem to intuitively divide words into moras. The established phonotactic rules are outlined below:
-
 \begin{enumerate}
-    \itemsep0em 
-    \item a mora can comprise a vowel or consonant-vowel sequence.
-    \item a mora can also comprise just a consonant if it divides a vowel and a non-vowel (i.e. consonant or word boundary).
-    \item an otherwise unbound consonant preceding a vowel must combine to form one mora.
-    \item only runs of up to 2 vowels or consonants is allowed; any third V or C in a row must be separated with an epenthetic segment.
-    \item words *must* comprise at least a two-segment sequence that is either one or two moras.
+    \item abstract level - sequence of consonants, vowels, and tones
+    \item concrete level - resolution of syllabicity conflicts, then tone collation, then intervocalic voicing, then other processes
 \end{enumerate}
 
-% legal sequences so far (these can overlap):
-% \begin{itemize}
-%     \itemsep0em 
-%     \item V - i, u, a, e
-%     \item CV - ki, tu, pa, ne etc.
-%     \item VC - et, um, ap etc.
-%     \item VV - ai, e: etc.
-%     \item CVC - nah, mit, kup etc.
-%     \item CVV - na:, nai, nae, nau etc.
-%     \item VCV - ata, iku etc.
-%     \item VCCV - ahki, edma etc.    
-% \end{itemize}
+Every consonant wants to be syllabic, but is displaced by vowels (kinda).
+Tries to assign [+syl] to every phoneme but plosives and /j w/ can't take it, so the [+syl] is assigned to an epenthetic vowel most often transcribed as [ə]. why can't /j w/ become syllabic? perhaps glide requirement, can't be held indefinitely? How are they actually articulated? 
 
-% illegal sequences (\% word boundary):
-% \begin{itemize}
-%     \itemsep0em 
-%     \item \%C\%
-%     \item \%CCV
-%     \item VCC\%
-%     \item CCC
-%     \item VVV    
-% \end{itemize}
+Also why does an epenthetic vowel have to be inserted adjacent to short vowels, but not long vowels? IT'S BECAUSE OF TONE SEE IT ALL MAKES SENSE IN THE END
 
-The 1st/2nd person suffix -s can appear word-finally after one consonant, violating phonotactics.
+While syllables are purported to be a feature of the phonology of \langeng{}, the nucleus position can be filled by both vowels and consonants, even plosives. This peculiarity can be explained with featural analysis. All phonemes have the feature [+syllabic] on the abstract level, regardless of legality. On the concrete level, the conflicts between [+syllabic] and other features are resolved by either attaching an epenthetic vowel or dropping the feature entirely, depending on the phonotactic environment. 
 
-There doesn't seem to be any restrictions in terms of which consonants can appear where.
+/VCCV/ becomes [VCəCəV], /\longv{V}CCV/ becomes [\longv{V}CCəV]
 
-/ju/ and /iw/ are in complementary distribution, same as /uj/ and /wi/.
-
-/wa/ has a tendency to be realized as [o] in fast speech.
-
-/Vji/ is rare and very frequently turns into /Vj/; /\%ijV/ into /\%jV/ has already happened recently.
+Long vowels block epenthetic vowels both in the syllables they occupy and the following syllable, but short vowels do not. 
 
 \newpage
 
@@ -354,8 +407,6 @@ There have been efforts to adopt Cree syllabics, but this has so far not seen wi
 
 \chapter{Verbs} 
 
-% TOTALLY retain the move/feel/change/remain distinction in some way 
-
 The verb is the biggest focal point of \lang{} morphosyntax. Most things are expressed within the verb phrase. The distinction between inflection and derivation is difficult to ascertain, and a lot of affixes can be either.
 
 Since verbs can be derived from both verbal and nominal roots, no distinction is made between the two in this section. Instead, I will refer to stems as the nucleus of the morphological verb throughout this chapter.
@@ -371,10 +422,11 @@ The verbal morphology can be laid out as such:
         -1 & preverbal affix \\
         0 & root \\
         1 & reduplication \\
-        2 & additional verb \\
-        3 & derivational suffixes \\
-        4 & -y suffix \\
-        5 & final suffix \\
+        2 & incorporated noun \\
+        3 & additional verb \\
+        4 & derivational suffixes \\
+        5 & -y suffix \\
+        6 & final suffix \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -387,6 +439,10 @@ Verbs are divided into four categories depending on factors like the number and 
 
 Verbs in the \textsc{move} class describe some kind of physical movement from one place or orientation to another, either of its own power or by means of an external volitive or natural force. 
 
+\subsubsection{\textsc{give} subclass}
+
+the \textsc{give} subclass involves any handing over or taking away of objects by an agent unto a recipient. All ditransitive
+
 \subsection{\textsc{change} class}
 
 Verbs in the \textsc{change} class describe some kind of physical alteration of an entity. This involves compositional, deformational, or aesthetic changes, which can be either momentary or lasting. Prototypical \textsc{change}-type verbs involve either one entity retaining its physical composition but is deformed into another shape (e.g. breaking or bending a stick) or one entity transforming into something else as a whole (e.g. water freezing into ice).
@@ -395,13 +451,13 @@ Verbs in the \textsc{change} class describe some kind of physical alteration of 
 
 Verbs in the \textsc{feel} class describe actions or events with no clear physical force imparted on someone or something. This includes sensory impressions, feelings, thoughts, talking, crying, and so on.
 
-\subsection{\textsc{remain}-type}
+\subsection{\textsc{remain} class}
 
 Verbs in the \textsc{remain} class are stative verbs describing states, qualities, characteristics.
 
 \section{Preverbal affixes}
 
-A group of prefixes come before the verb stem to mark various modal and aspectual things. There are two sets, and the set used for a given verb depends on factors like verb class and 
+A group of prefixes come before the verb stem to mark various modal and aspectual things. There are two sets, and the set used for a given verb depends on factors like verb class and associated motion.
 
 \begin{table}[ht]
     \centering
@@ -409,18 +465,20 @@ A group of prefixes come before the verb stem to mark various modal and aspectua
         \toprule
                    & Set 1  & Set 2 \\
         \midrule
-        Factual    & i-     & ki- \\
-        Nonactual  & lea-   & kia- \\
-        Actual     & a-     & ka- \\
-        Punctual   & ?-     & ?- \\
-        Negative   & ?-     & ?- \\
-        Defective  & ?      & ?- \\
+        Factual    & i-     & e- \\
+        Nonactual  & ne-    & ne- \\
+        Actual     & a-     & h- \\
+        Instant    & w-     & uu- \\
+        Negative   & hùúy-  & hùúy- \\
+        Defective  & ?-     & ?- \\
         Jussive    & ?-     & ?- \\
-        Resumptive & ?-     & ?- \\
+        Resumptive & si-    & si- \\
         \bottomrule
     \end{tabular}
     \caption{Preverbs of \lang}
 \end{table}
+
+Apart from the negative prefix, these affixes do not have tone on their own and instead gain tone from interacting with the root. Set 1 dissimilates from the first tone of the root, becoming the opposite tone. Set 2 copies the tone instead, making it the same as the 
 
 Each verb class uses a particular set of preverbs:
 
@@ -469,12 +527,12 @@ The actual preverbs mark an action or event happening at an indicated time. They
 
 \pex
 \a\begingl
-ka-[\textsc{act.ii}-]@
+ak-[\textsc{act.ii}-]@
 hahu[sleep]
 \glft `they are sleeping'
 \endgl
 \a\begingl
-kia-[\textsc{nact.ii}-]@
+lek-[\textsc{nact.ii}-]@
 hahu[sleep]
 \glft `sleeping', `they would sleep'
 \endgl
@@ -484,9 +542,11 @@ hahu[sleep]
 
 negation!
 
-\subsection{Punctual preverbs}
+\subsection{Instant preverbs}
 
 "indicative" for punctual stems
+
+also marks "immediately", usually following another action (e.g. I jumped out and they screamed.IST), denoting that they took place nearly exactly at the same time but one as a result of the other
 
 \subsection{Defective preverbs}
 
@@ -536,16 +596,16 @@ Rightward reduplication involves copying some part of the root onto the end of t
         \toprule
         Root ending & Reduplicated & Example \\
         \midrule
-        CV    & CVC(V)  & -pap `become large, grow' (< -pa `be large') \\
+        ...CV & ...CVC(V)& -pap `become large, grow' (< -pa `be large') \\
               &         & -wanin `deepen, sink' (< -wani `be deep') \\
               &         & -hahuhu `fall asleep' (< -hahu `sleep') \\
-        (C)VC & CVCV    & -kutu `about to notice' (< -kut `notice') \\
+        ...(C)VC & ...(C)VCV  & -kutu `about to notice' (< -kut `notice') \\
               &         & -hepasa `yield, buckle' (< -hepas `bend') \\
               &         & -newe `where to' (< -new `what') \\
-        CV\longv{} & CV\longv{}CV & -tiidi `sit down' (< -tii `sit, be sitting') \\
+        ...CV\tsub{1}V\tsub{2} & ...CV\tsub{1}V\tsub{2}CV\tsub{2} & -tiidi `sit down' (< -tii `sit, be sitting') \\
               &         & -taata `split in two' (< -taa `two, a pair') \\
               &         & -thameeme `go around' (< -thamee `return') \\
-        (C)VCCV & (C)VCCVCV & -patwewe `set off' (< -patwe `go') \\
+        ...VCCV & ...VCCVCV & -patwewe `set off' (< -patwe `go') \\
               &         & -untutu `demonstrate' (< -untu `lead') \\
         \bottomrule
     \end{tabular}
@@ -578,6 +638,16 @@ This can also be used for affection or adoration towards someone or something.
 
 % example here
 
+\subsection{Incorporated noun}
+
+One noun can be incorporated, acts as topical referent that in some way pertains to the action.
+
+\begin{itemize}
+    \item I.ABS fall\_asleep+opera-1S "I fell asleep during the opera"
+    \item nails.ABS I.ERG1 cut+cat "I cut the cat's nails"
+    \item seeds.ABS they.ERG1 take\_out+peppers "they took the seeds out of the peppers"
+\end{itemize}
+
 \subsection{Additional verb}
 
 You can add another verb to the stem. the extra verb is usually about posture or movement. Oftentimes has an imperfective connotation but can also be read literally.
@@ -593,8 +663,9 @@ These affixes
         -hi & 'entirely' or 'all of' \\
         -at & 'back and forth', 'there and back' \\
         -nen & 'one after another', 'one another' \\
-        -ke & 'come and X' \\
-        -yeets & 'make use of X' \\
+        -k & 'come and X' \\
+        -yeet & 'make use of X' \\
+        -wuuk & 'provide X' \\
         \bottomrule
     \end{tabular}
     \caption{List of verbal derivational affixes}
@@ -606,29 +677,38 @@ These affixes
 
 \subsubsection{-nen 'one after another'}
 
-\subsubsection{-ke 'come and X'}
+\subsubsection{-k 'come and X'}
 
-\subsubsection{-yeets 'make use of X'}
+\subsubsection{-yeet 'make use of X'}
+
+Verbs may be formed from nouns to describe the action of using them for a particular purpose. For example \textit{awtyeet} `they use a hammer' (< \textit{wot} `hammer'), \textit{apiwkenyeet} `they speak Piwken' or `they communicate in Piwken' (< \textit{piwken}) 
+
+\subsection{-wuuk 'provide X'}
+
+\section{-y suffix}
+
+The -y suffix has several different uses depending on the verb's valence, class, and participants involved.
+
+on intransitives, applicative?
+
+on \textsc{move, change} monotransitives, switch the marked argument to the non-absolutive argument
+
+on ditransitives, switch marked argument to 
 
 \section{Final suffix}
 
 \begin{table}[ht]
     \centering
-    \begin{tabular}{lcccc}
+    \begin{tabular}{lc}
         \toprule
-         & \multicolumn{4}{c}{Following...} \\
-         & C & CC & V & VV \\
-        \midrule
-        1st and 2nd person & -s & -ih & -s & -s \\
-        3rd person animate & -Ce & -e & -e & -ne \\
-        3rd person inanimate & -Ca & -a & -e & -ne \\
+        1st and 2nd person & -ih \\
+        3rd person animate & -Ø \\
+        3rd person inanimate & -a \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-The third person affixes following C replicate the consonant they follow to make them longer.
-
-Intransitive verbs take no person marking. Transitive verbs are marked for person agreeing with the syntactic pivot. The first person is used for the speaker or a group including the speaker. The second person is used for the addressee (whoever is being spoken to) in much the same way. The third person refers to anything not a speech act participant, including impersonal or circumstantial events, e.g. `it's raining'.
+Verbs are marked for person agreeing with the syntactic pivot. The first person is used for the speaker or a group including the speaker. The second person is used for the addressee (whoever is being spoken to) in much the same way. The third person refers to anything not a speech act participant, including impersonal or circumstantial events, e.g. `it's raining'.
 
 \chapter{Nominals}
 
@@ -638,41 +718,45 @@ While pure nouns exist, it is very common for nominals to be derived from verbs.
 
 \subsection{Absolutive case}
 
+null suffix
+
 least agentive argument takes absolutive, always. 
 
 intransitive verbs take absolutive because the sole argument is the least agentive argument.
 
-\subsection{Ergative 1 case}
+\subsection{Ergative case}
 
-marks the agent of transitive verbs where the action/change described can only come about as a result of someone's action. e.g. something can't be chewed by any other means than someone doing it, making the agent inherent to the action, and so the agent of the verb 'chew' takes the ergative 1 case. 
+-p suffix
 
-\subsection{Ergative 2 case}
+marks the agent of transitive verbs where the action/change described can only come about as a result of someone's action. e.g. something can't be chewed by any other means than someone doing it, making the agent inherent to the action, and so the agent of the verb 'chew' takes the ergative case. 
 
-% can also maybe be called Causative?
+Also marks possessors when on pronouns?
 
-marks the agent of transitive verbs where the action/change described can happen through various means, not just through deliberate action. e.g. something can fall apart on its own, or by inanimate forces of nature, but a volitive agent can come around and take it apart deliberately. Similarly, something can heat up on its own, or through external forces both volitive and non-volitive. As such, "take apart" and "warm up(caus.)" would take an ergative 2 agent
+\subsection{Casuative case}
 
-\subsection{Dative case}
+marks the agent of transitive verbs where the action/change described can happen through various means, not just through deliberate action. e.g. something can fall apart on its own, or by inanimate forces of nature, but a volitive agent can come around and take it apart deliberately. Similarly, something can heat up on its own, or through external forces both volitive and non-volitive. As such, "take apart" and "warm up(caus.)" would take a causative agent
 
-used for experiencers of \textsc{feel} verb class. Also benefactive and purposive (in order to [verb], for [verb])
+\subsection{case 4}
+
+-tiih suffix
+
+The case 4 marks the Stimulus role of \textsc{feel} verbs related to senses and emotions.
 
 \section{Number}
 
-after CC or V, -um; after C VV -wem
+after CC or V, -um; after C VV -wom, added after case. clitic-ish
 
 \section{Pronouns}
 
-There are personal pronouns but no demonstrative pronouns.
+\langeng{} does not have third person pronouns, nor does it have any demonstrative pronouns. 
 
 \subsection{Personal pronouns}
-
-\langeng{} does not have third person pronouns, nor does it have any demonstrative pronouns. 
 
 \begin{table}[ht]
     \centering
     \begin{tabular}{lllll}
         \toprule
-                             & Absolutive & Ergative 1 & Ergative 2 & Dative \\
+                             & Absolutive & Ergative & Casuative & Dative \\
         \midrule
         1st person sg.       & ta         & tap      &   & tauk \\
         1st person pl.       & taum       & tapwem   &   & taukwem \\
@@ -684,14 +768,37 @@ There are personal pronouns but no demonstrative pronouns.
     \caption{Personal pronouns of \lang}
 \end{table}
 
+As demonstrated above, personal pronouns are very transparently inflected. 
+
 \section{Demonstrative determiner}
 
 one formative, put before NP to mean "this" or after to mean "that"
 
 In order to work pronominally, must modify [word for "particular one", figure out]
 
+\section{Discourse determiners}
+
+The discourse determiners mark things based on their relevance to the current topic of discussion. these can modify any part of speech with semantic content or act as a particle/attach to a conjunction (decide between these, not having conjunctions makes it easy) to modify the entire clause.
+
+\subsection{asa - previously mentioned topic}
+
+The determiner \textit{asa} marks something that has already been established in dialog between the speaker and listener. Pragmatically, this can have several different purposes. as I mentioned, as you know, like I said, you know the one, apropos, going back to, etc.
+
+\subsection{kssa - imminent new topic}
+
+The determiner \textit{kssa} marks something that hasn't yet been brought up or expanded upon in dialog with the listener, but intends to do so very soon. we'll get back to that, more on that later, etc.
+
+This topic is always related to something mentioned already, but perhaps only in passing, or the information that is gonna be shared hasn't been brought up yet.
+
+\subsection{ksih - new, unrelated topic}
+
+The determiner \textit{ksih} marks non-sequitors, complete shifts in conversational topic. 
+
 \chapter{Syntax}
 
+\section{Parataxis}
+
+things are just put next to each other for the most part, subordination isn't really a thing?
 
 \section{The marked argument - Subject}
 
@@ -709,20 +816,88 @@ Only the marked argument can do certain things?
 
 Verbs are always put last in the sentence as a rule. 
 
-\subsection{Intransitive}
+\subsection{Monovalent and Avalent VP}
 
 subject-verb or null-verb (impersonal)
 
-\subsection{Transitive}
+\subsection{Divalent VP}
 
-verb last, marked argument first
+verb last, agent closest to verb
 
-\subsection{Ditransitive}
+\subsubsection{Verbs with a Stimulus}
 
-theme-recipient-agent-verb for \textsc{give} verbs, others depend
+stimulus is case 4 and A, experiencer is absolutive and P
 
-\section{Parataxis}
+\subsubsection{Verbs with an inanimate Agent (Force)}
 
-things are just put next to each other for the most part, subordination does happen but not as often as expected
+maybe not possible? this is dubious and undetermined
+
+\subsection{Trivalent VP}
+
+don't look for ditransitive causatives they don't exist
+
+\subsubsection{Verbs with a Recipient and Theme}
+
+all verbs in \textsc{give} subclass, only ones?
+
+\subsubsection{Verbs with an Instrument}
+
+Instrument takes erg, agent caus?
+
+\subsubsection{Verbs with an associative participant}
+
+Any verb that involves other participants nonoptionally may?must? introduce them as a third argument. Actions can include playing sports, large-scale construction, singing in a group, etc etc etc. A recurring theme is that each participant isn't doing a parallel task like e.g. watching a movie, they are contributing in different ways to a common goal.
+Whether or not a verb can take the comitative argument is a lexical distinction. e.g. playing solitaire would not take this argument while playing football would, building a bench probably wouldn't but building a house definitely would. This can also be used semi-productively with actions that wouldn't necessarily involve other participants to mark that an action uncharacteristically requires several people to achieve due to scope or difficulty.
+
+The additional participant is marked with same case as Agent.
+
+\subsubsection{Verbs with a volitive Experiencer}
+
+In verb phrases with a \textsc{feel} verb involving senses and emotions, the Experiencer is almost always involitive and the sensory or emotional stimulus affects them without any initiative. However, if the Experiences is actively seeking the stimulus (e.g. looking for something, sniffing around, listening for a sound, pondering something, trying to cry etc.), the Experiencer must be doubly referred as both absolutive and causative. stimulus still dative and nonoptional.
+
+\part{Pragmatics and discourse structure}
+
+(Overarching basis in autistic neurotypes)
+
+Direct communication anywhere possible, indirect communication only used for humorous purposes
+
+Questions can be asked without implicature, and answers are given straight. conflict is resolved by addressing it
+
+Questions are often followed up with or preempted by a reason for asking
+
+Repeating information back is considered a normal part of discourse
+
+Explicated inferrence is okay, implicated inferrence not a thing? i.e. it's okay to omit information that has been established and refer to it endophorically, but to have an unspoken meaning behind one's speech isn't a thing in Piwken discourse.
+
+Conversations in \langeng{} culture primarily revolve around the pursuit of sharing facts about the world. Most (if not all) \langeng{} care about having a clear and factual understanding of their environment, and social bonds are formed around this mutual act of presenting information that each person may think others find interesting or stimulating, but may not be directly relevant to all conversational partners. This differs from conversations in the vast majority of languages, which aside from direct communication serve to establish social hierarchies and make indirect inferences. The definition of "truth" in this context refers to any statement about reality, an authentically held opinion or belief about reality, or an authentically held interpretation of a fictional scenario. 
+
+A given conversation in \langeng{} involves more unprompted sharing of information, less prompting for information with questions. Conversations can start and stop more or less spontaneously, no leading into them with small-talk or leading out of them with parting words or other gestures. Questions are usually for the purpose of expanding on a given piece of information, and unless explicitly challenging what is being said, they are asked in earnest only with the intent to learn more. 
+
+\chapter{Truth assertions and challenges}
+
+Given that the sharing and challenging of truth assertions serves such a foundational part of interpersonal communication, statements about the world fall into certain categories based on the perceived differences between the speaker's own confidence in their own statement and how it fits into the listener's frame of reference. 
+
+Is this actually semantics or syntax? Well, it pertains more to the structure of conversations that the choice of words and structuring of sentences, even though those play a role; such is life on the S-side.
+
+\section{Speaker has full confidence}
+
+If the speaker knows an assessment to be true for any reason, whether it be from direct experience, the topic originating from the speaker themselves, it's a universal truth of the universe, or for some other reason, these truth assertions are phrased in a particular way. how? 
+
+This also includes statements of established truths in the context of the conversation or between the discourse participants, or haven't been disputed in current context.
+
+How is this responded to? Is it possible to refute these? Is refuting full confidence assertions rude? perchance?
+
+\section{Speaker has reduced confidence}
+
+This is the default.
+If the speaker does not have full confidence in their statement, for example due to gaining this information from someone else, lack of requisite experience, or because the situation is changeable, or for any other reason, these truth assertions are phrased in a way that is different from full confidence assertions. 
+
+Responses can vary; by using this 'mode', the speaker invites other perspectives and it's not considered rude to correct them. Otherwise if the other person doesn't have full confidence either, they just leave it at that? partial confidence assertions entered into context are treated in a special way maybe?
+
+\section{Speaker issues a correction}
+
+If one discourse participant contributes to the context something that another participant knows to be untrue, they may issue a correction. This is not considered rude in and of itself, like it may be perceived in other cultures. 
+
+\include{translations.tex}
 
 \end{document}
