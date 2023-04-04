@@ -1,4 +1,4 @@
-\documentclass[smallroyalvopaper,9pt]{memoir}
+\documentclass[smallroyalvopaper,9pt]{memoir} %smallroyalvopaper
 \usepackage{multicol, multirow, array} % table and column pages formatting
 \usepackage{fontspec} % font selection
 \usepackage{xeCJK}
@@ -13,6 +13,7 @@
 \usepackage{expex}      % glossing package
 % \usepackage{phonrule}   % phonotactics rules
 \usepackage{enumitem}   % lists (enumerate)
+\usepackage{suffix}
 \usepackage[calc,english]{datetime2} % auto updates date
 
 
@@ -21,7 +22,7 @@
 
 \settrimmedsize{234mm}{156mm}{*}
 
-\setmainfont{Noto Serif}
+\setmainfont{Cambria}
 \setCJKmainfont{Noto Sans CJK JP}
 \restylefloat{table}
 
@@ -62,7 +63,7 @@
 
 \newcommand{\lang}{Piwkeneth}
 \newcommand{\langfr}{Pévouguienne}
-\newcommand{\langeng}{Piwken}
+\newcommand{\langeng}{Pawakin}
 \newcommand{\people}{TBD}
 
 \newcommand{\longv}[1]{#1ː}
@@ -78,7 +79,7 @@
 %------------------------
 
 \title{
-    \fontsize{70}{60}\selectfont 
+    \fontsize{50}{40}\selectfont 
     {the \langeng{} language} \\
     \sffamily 
     \vspace{2cm}
@@ -241,9 +242,9 @@ The fricatives /s h ł/ undergo fortition to [t\bind{}s ʔ t\bind{}ɬ] word-init
 
 % examples here
 
-\subsection{Geminization}
+% \subsection{Geminization}
 
-Sequences of the same consonant are geminated and produced as a single release.
+% Sequences of the same consonant are geminated and produced as a single release.
 
 \newpage
 \section{Vowels}
@@ -297,20 +298,22 @@ These vowels, following consonants, do not trigger the insertion of epenthetic v
 
 \section{Tone}
 
-There is tone, high and low where low is unmarked
-each phonemic element carries tone, even consonants
-each "syllable" in concrete level has resulting level or contour tone
-tonogenesis? where did they come from and what sorts of patterns has it created
+% There is tone, high and low where low is unmarked
+% each phonemic element carries tone, even consonants
+% each "syllable" in concrete level has resulting level or contour tone
+% tonogenesis? where did they come from and what sorts of patterns has it created
 
-While on the surface \lang{} appears to exhibit a very complex tonal system, it's actually a fairly simple two-tone system that undergoes complex mutations during production. I do not care how applicable OT is to tonal systems, I am not acknowledging it by including it here.
+% Voiceless, word-final segments' behavior depends on their tone and preceding segment. A voiceless word-final segment that can't displace its tone onto a preceding long vowel will instead be unrealized, unless the tone is high, in which case an epenthetic vowel must follow it in the final pronunciation.
 
-All segmental phonemic elements (consonants and vowels) carry either a high or low tone in the abstract phonotactic level. In the concrete level, tone must be carried by a syllabic component, meaning that obstruents - plosives and (voiceless) fricatives - must displace their tones onto an epenthetic vowel or an adjacent long vowel.
+% Both short and long vowels carry tone, but long vowels can also "adopt" the tone of an adjacent obstruent.
 
-Voiceless, word-final segments' behavior depends on their tone and preceding segment. A voiceless word-final segment that can't displace its tone onto a preceding long vowel will instead be unrealized, unless the tone is high, in which case an epenthetic vowel must follow it in the final pronunciation.
+% Almost all word-initial, voiceless plosives are associated with high tone. 
 
-Both short and long vowels carry tone, but long vowels can also "adopt" the tone of an adjacent obstruent.
+Approaching the language naïvely, it's easy to become overwhelmed by what appears to be a incredibly complex tonal system. A total of 8 contours and register tones makes it one of the larger tone inventories in the world, and extensive tone change complicates things even further. 
 
-Almost all word-initial, voiceless plosives are associated with high tone. 
+However, the true tonal system is a much simpler two-level system hidden behind prolific phonotactic mutations. Every phonemic segment on the abstract level carries tone, which then collapses into particular phonetic realizations on the concrete level. 
+
+[french missionary] described an "unrooted, melodical voice" in his grammar.
 
 \begin{table}[ht]
     \centering
@@ -329,7 +332,7 @@ Almost all word-initial, voiceless plosives are associated with high tone.
         \midrule
         Low-rising & a\'a & (C˩)\longv{V}˩C˥ & \longv{V}˩˧ \\
         High-falling & a\`a & (C˥)\longv{V}˥C˩ & \longv{V}˥˧\\
-        Low-bump & \'a\`a & C˩\longv{V}˥C˩ & \longv{V}˩˧˨ \\
+        Low-peak & \'a\`a & C˩\longv{V}˥C˩ & \longv{V}˩˧˨ \\
         High-dip & \`a\'a & C˥\longv{V}˩C˥ & \longv{V}˥˧˦ \\
         \bottomrule
     \end{tabular}
@@ -367,7 +370,8 @@ Almost all word-initial, voiceless plosives are associated with high tone.
 
 \begin{enumerate}
     \item abstract level - sequence of consonants, vowels, and tones
-    \item concrete level - resolution of syllabicity conflicts, then tone collation, then intervocalic voicing, then other processes
+    \item concrete level - resolution of syllabicity conflicts, then tone collation
+    \item phonetic level - intervocalic voicing, initial and final mutations, etc.
 \end{enumerate}
 
 Every consonant wants to be syllabic, but is displaced by vowels (kinda).
@@ -465,14 +469,14 @@ A group of prefixes come before the verb stem to mark various modal and aspectua
         \toprule
                    & Set 1  & Set 2 \\
         \midrule
-        Factual    & i-     & e- \\
-        Nonactual  & ne-    & ne- \\
-        Actual     & a-     & h- \\
+        Factual    & i-     & a- \\
+        Nonactual  & n-     & i- \\
+        Actual     & a-     & n- \\
         Instant    & w-     & uu- \\
         Negative   & hùúy-  & hùúy- \\
-        Defective  & ?-     & ?- \\
-        Jussive    & ?-     & ?- \\
-        Resumptive & si-    & si- \\
+        Defective  & we-    & we- \\
+        Jussive    & k-     & w- \\
+        Resumptive & s-     & t- \\
         \bottomrule
     \end{tabular}
     \caption{Preverbs of \lang}
@@ -605,7 +609,7 @@ Rightward reduplication involves copying some part of the root onto the end of t
         ...CV\tsub{1}V\tsub{2} & ...CV\tsub{1}V\tsub{2}CV\tsub{2} & -tiidi `sit down' (< -tii `sit, be sitting') \\
               &         & -taata `split in two' (< -taa `two, a pair') \\
               &         & -thameeme `go around' (< -thamee `return') \\
-        ...VCCV & ...VCCVCV & -patwewe `set off' (< -patwe `go') \\
+        ...VCCV & ...VCCVCV & -atwewe `set off' (< -atwe `go') \\
               &         & -untutu `demonstrate' (< -untu `lead') \\
         \bottomrule
     \end{tabular}
@@ -814,7 +818,7 @@ Only the marked argument can do certain things?
 
 \section{Simple clauses}
 
-Verbs are always put last in the sentence as a rule. 
+Verbs are always put last in the sentence as a rule. These simple clauses 
 
 \subsection{Monovalent and Avalent VP}
 
@@ -846,7 +850,7 @@ Instrument takes erg, agent caus?
 
 \subsubsection{Verbs with an associative participant}
 
-Any verb that involves other participants nonoptionally may?must? introduce them as a third argument. Actions can include playing sports, large-scale construction, singing in a group, etc etc etc. A recurring theme is that each participant isn't doing a parallel task like e.g. watching a movie, they are contributing in different ways to a common goal.
+Any verb that involves other participants nonoptionally must introduce them as a third argument. Actions can include playing sports, large-scale construction, singing in a group, etc etc etc. A recurring theme is that each participant isn't doing a parallel task like e.g. watching a movie, they are contributing in different ways to a common goal.
 Whether or not a verb can take the comitative argument is a lexical distinction. e.g. playing solitaire would not take this argument while playing football would, building a bench probably wouldn't but building a house definitely would. This can also be used semi-productively with actions that wouldn't necessarily involve other participants to mark that an action uncharacteristically requires several people to achieve due to scope or difficulty.
 
 The additional participant is marked with same case as Agent.
@@ -855,11 +859,13 @@ The additional participant is marked with same case as Agent.
 
 In verb phrases with a \textsc{feel} verb involving senses and emotions, the Experiencer is almost always involitive and the sensory or emotional stimulus affects them without any initiative. However, if the Experiences is actively seeking the stimulus (e.g. looking for something, sniffing around, listening for a sound, pondering something, trying to cry etc.), the Experiencer must be doubly referred as both absolutive and causative. stimulus still dative and nonoptional.
 
-\part{Pragmatics and discourse structure}
+\chapter{Pragmatics and discourse structure}
 
 (Overarching basis in autistic neurotypes)
 
 Direct communication anywhere possible, indirect communication only used for humorous purposes
+
+Division between external truths (things that can be perceived independently and assessed to be true) and internal truths (things involving a person's thoughts, beliefs, ideas, emotions, etc.). External truths can be asserted, challenged, and corrected by anyone, and can be used to challenge other truths (i.e. one thing cannot be true because another thing must be true), whereas internal truths can only be asserted, challenged, and corrected by the person harboring them, and may not be used to challenge other internal or external truths directly.
 
 Questions can be asked without implicature, and answers are given straight. conflict is resolved by addressing it
 
@@ -873,31 +879,34 @@ Conversations in \langeng{} culture primarily revolve around the pursuit of shar
 
 A given conversation in \langeng{} involves more unprompted sharing of information, less prompting for information with questions. Conversations can start and stop more or less spontaneously, no leading into them with small-talk or leading out of them with parting words or other gestures. Questions are usually for the purpose of expanding on a given piece of information, and unless explicitly challenging what is being said, they are asked in earnest only with the intent to learn more. 
 
-\chapter{Truth assertions and challenges}
+\section{Truth assertions and challenges}
 
 Given that the sharing and challenging of truth assertions serves such a foundational part of interpersonal communication, statements about the world fall into certain categories based on the perceived differences between the speaker's own confidence in their own statement and how it fits into the listener's frame of reference. 
 
-Is this actually semantics or syntax? Well, it pertains more to the structure of conversations that the choice of words and structuring of sentences, even though those play a role; such is life on the S-side.
+Is this actually semantics or syntax? It pertains more to the structure of conversations that the choice of words and structuring of sentences, even though those play a role; such is life on the S-side.
 
-\section{Speaker has full confidence}
+\subsection{Speaker has full confidence}
 
 If the speaker knows an assessment to be true for any reason, whether it be from direct experience, the topic originating from the speaker themselves, it's a universal truth of the universe, or for some other reason, these truth assertions are phrased in a particular way. how? 
+
+This is the default for internal truths.
 
 This also includes statements of established truths in the context of the conversation or between the discourse participants, or haven't been disputed in current context.
 
 How is this responded to? Is it possible to refute these? Is refuting full confidence assertions rude? perchance?
 
-\section{Speaker has reduced confidence}
+\subsection{Speaker has reduced confidence}
 
-This is the default.
+This is the default for external truths.
 If the speaker does not have full confidence in their statement, for example due to gaining this information from someone else, lack of requisite experience, or because the situation is changeable, or for any other reason, these truth assertions are phrased in a way that is different from full confidence assertions. 
 
 Responses can vary; by using this 'mode', the speaker invites other perspectives and it's not considered rude to correct them. Otherwise if the other person doesn't have full confidence either, they just leave it at that? partial confidence assertions entered into context are treated in a special way maybe?
 
-\section{Speaker issues a correction}
+\subsection{Speaker issues a correction}
 
 If one discourse participant contributes to the context something that another participant knows to be untrue, they may issue a correction. This is not considered rude in and of itself, like it may be perceived in other cultures. 
 
-\include{translations.tex}
+%\include{translations.tex}
+\include{dictionary.tex}
 
 \end{document}

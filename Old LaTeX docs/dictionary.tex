@@ -1,0 +1,218 @@
+% DESIGN PRINCIPLES OF DICTIONARY
+%
+% - double column pages, type size
+% - all justified 
+% - entries are root, then stem, then part of speech
+% - what creates a different stem is rightward reduplication, derivational affixes
+% - should use dictionary forms, i.e. as null as possible but probably needs aspect
+
+\newcounter{defcount} % enumerate definitions
+\newcounter{dictwordcount} % total word count
+
+\newcommand{\dictletter}[1]{
+    \section*{\centering #1}
+}
+
+\newcommand{\dictentry}[3]{
+    \refstepcounter{dictwordcount}
+    \setcounter{defcount}{0}
+    \noindent\textbf{\large #1} {/#2/} \textit{#3.}
+}
+
+\newcommand{\dictappend}[2]{
+    % \refstepcounter{dictwordcount} % uncomment this if these should count as unique words
+    \noindent\textbf{#1} {/#2/}
+}
+
+\newcommand{\dictdef}[1]{
+    \refstepcounter{defcount}
+    \textbf{\thedefcount}\penalty10000 { #1}
+}
+
+\WithSuffix\newcommand\dictdef*[1]{%
+    { #1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part*{Dictionary}
+
+\begin{multicols*}{2}
+\dictletter{A}
+%%%%%%%%%%%%%%
+%   A a
+%%%%%%%%%%%%%%
+
+\dictentry{\=atwe}{átwe}{v}
+    \dictdef{go}
+    \dictdef{function, be in service}
+    \dictdef{(electronics, machinery) run, operate}
+    \dictdef{(music) play}
+    \dictappend{hàtwe}{\'hatwe}
+        \dictdef*{go to somewhere}
+
+\dictentry{wàtwewe}{\'watwewe}{v}
+    \dictdef{set off}
+    \dictdef{start a race}
+
+\dictletter{E}
+%%%%%%%%%%%%%%
+%   E e
+%%%%%%%%%%%%%%
+
+\dictletter{H}
+%%%%%%%%%%%%%%
+%   H h
+%%%%%%%%%%%%%%
+
+\dictentry{iháahuu}{ih\longv{á}h\longv{u}}{v}
+    \dictdef*{is asleep, is sleeping}
+
+\dictentry{uuháahuuhuu}{\longv{u}h\longv{á}h\longv{u}h\longv{u}}{v}
+    \dictdef*{fall asleep}
+
+\dictentry{nh\=epas}{n\'hépas}{v}
+    \dictdef*{bend in a springy way}
+
+\dictentry{wh\=epasa}{w\'hépasa}{v}
+    \dictdef*{yield, buckle, break by bending}
+
+\dictentry{héth}{héɬ}{n}
+    \dictdef{language}
+    \dictdef{speech}
+
+\dictentry{hikúak}{hikúak}{n}
+    \dictdef{(uncountable) time}
+    \dictdef{length of time}
+    \dictdef{season, time of year}
+
+\dictletter{I}
+%%%%%%%%%%%%%%
+%   I i
+%%%%%%%%%%%%%%
+
+\dictentry{ihkà}{ih\'ka}{n}
+    \dictdef*{goat}
+
+\dictletter{K}
+%%%%%%%%%%%%%%
+%   K k
+%%%%%%%%%%%%%%
+
+\dictentry{kàa}{\'k\longv{a}}{n}
+    \dictdef*{person, particularly indigenous north american}
+
+\dictentry{\=ek\=ut}{é\'kút}{v}
+    \dictdef*{notice, sense}
+
+\dictentry{\=uuk\=utu}{\longv{ú}\'kútu}{v}
+    \dictdef*{is about to notice}
+
+\dictletter{M}
+%%%%%%%%%%%%%%
+%   M m
+%%%%%%%%%%%%%%
+
+\dictentry{meénìhkà}{m\longv{\'e}\'nih\'ka}{n}
+    \dictdef*{sheep}
+
+\dictletter{N}
+%%%%%%%%%%%%%%
+%   N n
+%%%%%%%%%%%%%%
+
+\dictentry{\=inéw}{ínéw}{v}
+    \dictdef*{is what}
+
+\dictentry{\=wnéwe}{\'wnéwe}{v}
+    \dictdef*{where to}
+
+\dictentry{n\'in\=on}{ní\'nn}{n}
+    \dictdef*{the sun}
+
+\dictletter{P}
+%%%%%%%%%%%%%%
+%   P p
+%%%%%%%%%%%%%%
+
+\dictentry{ípa}{ípa}{v}
+    \dictdef*{is large}
+
+\dictentry{wópap}{ẃpap}{v}
+    \dictdef*{grow, become large}
+
+\dictentry{P\=iwkén}{\'píwkén}{n.}
+    \dictdef{the \langeng{} people}
+    \dictdef{\langeng{} culture}
+
+\dictentry{P\=iwkénéth}{\'píwkénéɬ}{n.}
+    \dictdef*{the \langeng{} language}
+
+\dictletter{S}
+%%%%%%%%%%%%%%
+%   S s
+%%%%%%%%%%%%%%
+
+\dictentry{s\=ah}{\'s\'ah}{n}
+    \dictdef*{fortune, good luck}
+
+\dictletter{T}
+%%%%%%%%%%%%%%
+%   T t
+%%%%%%%%%%%%%%
+
+\dictentry{it\=aa}{i\'t\longv{á}}{v}
+    \dictdef*{is two, is a connected pair but seen as one whole thing}
+
+\dictentry{wt\=aat\=a}{w\'t\longv{á}\'tá}{v}
+    \dictdef*{share between two, connect two entities via this one thing}
+
+\dictentry{íthii}{íɬ\longv{i}}{v.}
+    \dictdef*{is close enough to not warrant a strong distinction}
+
+\dictentry{áthmee}{áɬm\longv{e}}{v}
+    \dictdef*{return}
+
+\dictentry{w\=othmeeme}{\'wɬm\longv{e}me}{v}
+    \dictdef*{go around, encircle}
+
+\dictentry{\=itii}{ít\longv{i}}{v}
+    \dictdef*{be sitting, be sat down}
+
+\dictentry{w\=otiiti}{\'wt\longv{i}ti}{v}'
+    \dictdef*{sit down, particularly nearby}
+    \dictappend{\=uutiiti}{\longv{ú}t\longv{i}ti} sit down elsewhere, over there, etc.
+
+\dictletter{U}
+%%%%%%%%%%%%%%
+%   U u
+%%%%%%%%%%%%%%
+
+\dictletter{W}
+%%%%%%%%%%%%%%
+%   W w
+%%%%%%%%%%%%%%
+
+\dictentry{íwani}{íwani}{v}
+    \dictdef*{is deep}
+
+\dictentry{wówanin}{ẃwanin}{v}
+    \dictdef*{deepen, become deep(er)}
+
+\dictentry{wt}{wt}{n}
+    \dictdef*{hammer}
+
+\dictletter{Y}
+%%%%%%%%%%%%%%
+%   Y y
+%%%%%%%%%%%%%%
+
+\dictentry{aawagga}{a:waka}{v}
+    \dictdef{now that's a proper dictionary definition I tell ya hwat}
+    \dictdef{oh shit there's another}
+    \dictdef{this is too many what do you mean}
+    \dictappend{aawagagga}{a:wagakka}
+        \dictdef*{it's weird but whatever works}
+\end{multicols*}
+
+total word count: \thedictwordcount
