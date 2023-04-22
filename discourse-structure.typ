@@ -148,3 +148,22 @@ Instead of pitting assertions against each other until one capitulates or they a
 === Reconcilication
 
 Conflicts carry the implication that the involved assertions are incompatible and oppose each other directly, and only one can be true at once, even if that isn't always true. Either of the interlocutors may recognize this and attempt to prove that the assertions are in fact orthogonal to each other and can in fact co-exist.
+
+#pagebreak()
+= Violating the Gricean maxim of quantity
+
+While the Piwken show that they generally follow Paul Grice's cooperative principle as they are laid out, their principles of cooperation don't exactly align with what Grice described.
+
+The biggest difference is with the maxim of quantity, wherein Grice stated that a contribution should be as detailed as needed and no more. In Piwken discourse, the lower limit is higher than in English, and the upper limit is practically non-existent; speakers seem to appreciate any amount of information given beyond a certain limit. They will still respond negatively to an overwhelming response, but where this limit is has not yet been determined and seems to be a matter of personal preference (read: I haven't figured out what I wanna do here yet).
+
+In response to "I need to eat":\
+- \* There's a place around the corner.\
+- There's a place around the corner, you can get food there.
+- They have food at a place around the corner.
+
+In response to "Was there any mail?"\
+- \* I checked the mailbox.\
+- I checked the mailbox, there wasn't any mail.
+- There was nothing when I checked.
+
+Each of the unacceptable responses above has a failed implication. While a neurotypical English speaker may understand the intent of "there's a gas station around the corner", because why else would it be mentioned in this context, but to the Piwken, this response does not relate to the initial utterance because it doesn't contain any previously established elements (that's really dubious and probably not gonna stick as an explanation).
