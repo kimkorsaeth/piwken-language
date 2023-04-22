@@ -2,9 +2,9 @@ import random
 import os
 
 Phonemes = ['p', 't', 'k', 's', 'ɬ', 'h', 'm', 'n', 'j', 'w', 'a', 'i', 'u', 'e', 'aa', 'ii', 'uu', 'ee']
-PhonemeWeights = (20, 20, 20, 18, 1, 14, 18, 18, 14, 14, 8, 8, 8, 8, 2, 2, 2, 2)
+PhonemeWeights = (10, 20, 20, 12, 10, 14, 12, 12, 16, 16, 12, 8, 8, 10, 10, 7, 7, 7)
 Consonants = ['p', 't', 'k', 's', 'ɬ', 'h', 'm', 'n', 'j', 'w']
-ConsonantWeights = (20, 20, 20, 18, 14, 14, 18, 18, 14, 14)
+ConsonantWeights = (20, 20, 20, 12, 10, 14, 12, 12, 14, 14)
 Plosives = {'p', 't', 'k'}
 Vowels = ('a', 'i', 'u', 'e', 'aa', 'ii', 'uu', 'ee')
 Tones = {'low': '', 'high': '\u0301'}
