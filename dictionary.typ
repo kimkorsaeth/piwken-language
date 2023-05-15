@@ -166,6 +166,9 @@ Finally, usage notes may be added to the entry to explain some part of its use t
     #dictdefs[they write it, they type it]
     #dictdefs[they put a signature on it]
 
+#dictentry[kìit#macr[e]][#high[k]#longv[i]#high[t]é][n]
+    #dictdef[bird]
+
 #dictentry[wk#macr[u]t][w#high[k]út][v]
     #dictdef[they notice it, they sense it]
 
@@ -252,8 +255,8 @@ Finally, usage notes may be added to the entry to explain some part of its use t
 //%%%%%%%%%%%%%%
 #dictletter[T]
 
-#dictentry[#macr[a]twá][átawá][v]
-    #dictdef[eat]
+#dictentry[#macr[a]twá][átwá][v]
+    #dictdef[they eat it]
 
 #dictentry[#macr[a]twáhi][átwáhi][v]
     #dictdef[eat in one bite]

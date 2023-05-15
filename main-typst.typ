@@ -37,7 +37,7 @@
 // Document
 
 #set page(numbering: "i")
-//#counter(page).update(1)
+#counter(page).update(1)
 
 
 = This is a work in progress
@@ -107,7 +107,7 @@ This grammar is written from an in-world perspective, citing names, places, and 
 #pagebreak()
 
 #set page(numbering: "1")
-//#counter(page).update(1)
+#counter(page).update(1)
 
 = The #langeng People
 
@@ -551,12 +551,15 @@ A large set of morphemes can modify the meaning of the stem.
 
 behaves both derivationally and inflectionally
 
-forms unergative/antipassive verbs 
+forms unergative/antipassive verbs
+
+makes person marking accusative and not ergative, 
 
 -ii after consonants, -yii after vowels, -y if person formative present
 
 /*
 intransitive unergative (passive) - transitive
+intransitive unergative - intransitive unaccusative
 intransitive unaccusative - causative
 transitive - causative
 */
@@ -604,7 +607,7 @@ sùntutkp#macr[i]i 'school' (lit. 'some place where things are taught')
 
 dative thing
 
-ay#macr[o]pik "I go on foot" → ay#macr[o]pitìx "I go there on foot"
+ay#macr[o]pik "I go on foot" → ay#macr[o]pitìxik "I go there on foot"
 
 == Locomotive stem
 
@@ -678,36 +681,6 @@ Verbs in the #smallcaps[exist] class are stative verbs describing states of bein
 
 = Nominals
 
-== Case
-
-there is case but they are clitics attaching to NPs
-
-can attach to blank, null NP to say something?
-
-=== Absolutive case
-
-null 
-
-Least agentive argument takes absolutive always.
-
-Intransitive verbs take absolutive because the sole argument is the least agentive argument.
-
-=== Ergative case
-
-marks the agent of transitive verbs where the action/change described can only come about as a result of someone's action. e.g. something can't be chewed by any other means than someone doing it, making the agent inherent to the action, and so the agent of the verb 'chew' takes the ergative case. 
-
-=== Causative case
-
-marks the agent of transitive verbs where the action/change described can happen through various means, not just through deliberate action. e.g. something can fall apart on its own, or by inanimate forces of nature, but a volitive agent can come around and take it apart deliberately. Similarly, something can heat up on its own, or through external forces both volitive and non-volitive. As such, "take apart" and "warm up(caus.)" would take a causative agent
-
-=== Stimulative case
-
-particle = yùt
-
-The case 4 marks the Stimulus role of #smallcaps[feel] verbs related to senses and emotions. 
-
-I.ABS flower.STIM smell
-
 == Number
 
 singular, plural. singulative?
@@ -757,9 +730,27 @@ If the speaker judges the addressee or addressees to be unwilling to interpret s
 
 
 
-== Definite determines 
+== Specificity
 
-before NP means "this", after NP means "that"
+Specificity is a semantic feature distinguishing whether a given phrase has a unique referent or not. A specific NP will refer to one referent in particular, while a non-specific NP will refer to any referent that fits the given context.
+
+#figure[
+  #table(
+    columns: 3,
+    align: left,
+    stroke: none,
+    [],             [Non-specific],[Specific],
+    [Nominal root], [kàa -- person, anyone],[ikàa -- a person, the person],
+    [VP agent],     [sùntu -- leader, someone leading],[#macr[a]ntu -- the leader, they are leading],
+    [VP patient],   [sekìi -- writing],[akìi -- a text, piece of writing, they are writing it]
+  )
+]
+
+kàa w#macr[e]héxtìxik "I should talk to someone" (it doesn't matter who)\
+ikàa #macr[i]héxtìxik "I have talked to a person"
+
+kìit#macr[e] mà wk#macr[u]tik? "did you see any birds?"\
+ikìit#macr[e] mà wk#macr[u]tik? "you saw a bird?"/"did you see the bird?"
 
 == Discourse determiners
 
@@ -781,11 +772,48 @@ The determiner #emph[k#macr[o]sih] marks non-sequitors, complete shifts in conve
 
 = Syntax
 
+== Number of arguments determining part of speech
+
+#emph[Really, there's no distinction between different parts of speech other than some morphological things, and instead the main difference is the number of arguments.]
+
+== Roles of arguments
+
+#emph[Arguments have specific roles, depending on what's described. These influence what can happen to them morphosyntactically, for example you can't add an extrinsic agent to an unergative VP without also adding the -yii suffix to the verb. more on this as I work through it]
+
+=== Patient
+
+#emph[Least agentive argument. Patient undergoes actions/changes/events.]
+
+=== Experiencer
+
+#emph[Less agentive argument. Does not effect or undergo actions/changes, but receives sensoral or emotional impressions. Experiences is usually assumed non-volitive, i.e. not actively receiving impressions. E.g. they smelled the bread, they heard a dog, they remembered 9/11]
+
+=== Inherent agent
+
+#emph[More agentive than patient. Functions as agentive argument of verbs where the action/event requires a volitive, conscious participant to effect change. E.g. they walk, they chew it, they reach for it
+
+When extrinsic agent is present, inherent agent becomes conduit of action. Extrinsic agent effects volitive change, conduit of action participates as an agentive force without explicit volition, patient behaves like normal.]
+
+=== Extrinsic agent
+
+#emph[most agentive than patient and (where applicable) inherent agent. On verbs where the action/event may be self-actualized by the patientive argument, the extrinsic agent takes over the actualization to make the verb "traditionally" transitive. E.g. it falls apart vs. they take it apart; it warms up vs. they heat it up
+
+Appears as third argument in trivalent causative VPs. E.g. they make them do work, they make them collect trash
+
+Appears in trivalent stimulative VPs. Usually, #smallcaps[feel]-class verbs relating to senses and emotions assume non-volition on the experiencer's part. If the experiencer is volitive and seeking out the impression, they must appear as both experiencer and extrinsic agent, making the verb trivalent. E.g. He tasted *him* the bread, I listened *me* a rare bird]
+
+=== Stimulus
+
+#emph[In #smallcaps[feel]-class verbs relating to senses and emotions, the entity providing the sensoral or emotional impression is obligatory. Stimulus arguments are predominantly inanimate, intangible, and non-volitive, but still considered more agentive than the experiencer.
+
+He is [by something] sad\
+\*He is sad]
+
 == Parataxis
 
 == Associative participant
 
-#emph[if you have an action where lotsa people would participate but the agentive argument only references a subset of it, then you gotta add another argument that references the whole group. do this with verbs where that's weird to say that it is difficult, or say "with no one" on verbs where you expect more people to say that it is easy]
+#emph[if you have an action where lotsa people would participate but the agentive argument only references a subset of it, then you gotta add another argument that references the whole group. Speakers will jokingly do this with verbs where that's weird to say that it is difficult, or leave it out on verbs where you expect more people to say that it is easy]
 
 Any verb that involves other participants that aren't within the scope of the agentive argument must introduce them as a third argument. Actions can include playing sports, large-scale construction, singing in a group, etc etc etc. A recurring theme is that each participant isn't doing a parallel task like e.g. watching a movie, they are contributing in different ways to a common goal.
 
@@ -798,6 +826,12 @@ Whether or not a verb can take the associative participant argument is a lexical
 In verb phrases with a #smallcaps[feel] verb involving senses and emotions, the Experiencer is almost always involitive and the sensory or emotional stimulus affects them without any initiative. However, if the Experiences is actively seeking the stimulus (e.g. looking for something, sniffing around, listening for a sound, pondering something, trying to cry etc.), the Experiencer must be doubly referred as both absolutive and causative. stimulus still stimulative and nonoptional.
 
 == Simple clauses
+
+=== Zero or one argument
+
+=== Two arguments
+
+=== Three arguments
 
 == Adjuncts
 
